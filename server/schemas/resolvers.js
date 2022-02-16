@@ -46,7 +46,8 @@ const resolvers = {
                     { $addToSet: { savedBooks: input } },
                     { new: true }
                   );
-              }
+                    return updatedUser;
+                }
           }
     },
   };
