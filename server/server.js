@@ -10,8 +10,8 @@ const app = express();
 const PORT = process.PORT || 3001;
 const server = new ApolloServer({
   typeDefs, 
-  resolvers
-  // context: authMiddleware
+  resolvers,
+  context: authMiddleware
 })
 
 async function startApolloServer(typeDefs, resolvers){
