@@ -10,7 +10,6 @@ import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-
 const SavedBooks = () => {
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
   const { loading, data } = useQuery(GET_ME);
