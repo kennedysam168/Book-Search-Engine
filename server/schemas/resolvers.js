@@ -41,15 +41,18 @@ const resolvers = {
             return { token, user };
           },
           saveBook: async (parent, { input }, context) =>{
-              if (context.user) {
-                const updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedBooks: input } },
-                    { new: true }
-                  );
-                    return updatedUser;
-                }
-          }
+            console.log("saveBook resolver", input)
+            if (context.user) {
+              const updatedUser = await User.findByIdAndUpdate(
+                  { _id: context.user._id },
+                  { $addToSet: { savedBooks: input } },
+                  { new: true }
+                );
+              console.log(updatedUser)
+                  return updatedUser;
+              }
+            else{ console.log("no user provided")}
+        }
     }
   };
   
